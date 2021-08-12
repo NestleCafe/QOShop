@@ -23,6 +23,18 @@
 				<text>学习视频</text>
 			</view>
 		</view>
+		
+		<!-- 推荐商品 -->
+		<view class="hot_goods">
+			<view class="title">推荐商品</view>
+			<view class="goods_list">
+				<view class="goods_item" v-for="item in goods" :key="item.goods_id">
+					<image :src="item.goods_small_logo"></image>
+					<view class="price">￥{{item.goods_price}}</view>
+					<view class="name">{{item.goods_name}}</view>
+				</view>
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -30,11 +42,13 @@
 export default {
 	data() {
 		return {
-			swipers: []
+			swipers: [],
+			goods: []
 		};
 	},
 	onLoad() {
-		this.getSwipers();
+		this.getSwipers()
+		this.getHotGoods()
 	},
 	methods: {
 		//获取轮播图数据
@@ -42,8 +56,18 @@ export default {
 			const res = await this.$request({
 				url: '/home/swiperdata'
 			});
-			console.log(res);
 			this.swipers = res.data.message;
+		},
+		//获取热门商品列表数据
+		
+		async getHotGoods(){
+			for(let i = 0; i < 10; i++){
+				let goods_id = Math.floor(Math.random()*9999 + 1)
+				const res = await this.$request({
+					url: `/goods/detail?goods_id=${goods_id}`
+				});
+				this.goods.push(res.data.message)
+			}
 		}
 	}
 };
@@ -68,12 +92,59 @@ export default {
 		view{
 			width: 120rpx;
 			height: 120rpx;
-			background: #BA1500;
+			background: $theme-color;
 			border-radius: 60rpx;
 			margin: 10px auto;
 			line-height: 120rpx;
 			color: white;
 			font-size: 50rpx;
+		}
+	}
+}
+.hot_goods{
+	background: #eee;
+	overflow: hidden;
+	margin-top: 10px;
+	.title{
+		color: $theme-color;
+		text-align: center;
+		letter-spacing: 20px;
+		padding: 10px 0;
+		margin: 7px 0;
+		background: white;
+	}
+	.goods_list{
+		padding: 0 15rpx;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		.goods_item{
+			background: white;
+			width: 355rpx;
+			height: 530rpx;
+			margin: 10rpx 0;
+			padding: 15rpx;
+			box-sizing: border-box;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			image{
+				display: block;
+				margin: auto;
+				width: 355rpx;
+				height: 355rpx;
+			}
+			.price{
+				color: $theme-color;
+				padding: 0;
+				margin: 0;
+				font-size: 36rpx;
+
+			}
+			.name{
+				font-size: 28rpx;
+				line-height: 50rpx;
+				padding-bottom: 15rpx;
+			}
 		}
 	}
 }

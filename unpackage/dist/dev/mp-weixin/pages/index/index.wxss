@@ -51,4 +51,56 @@
   color: white;
   font-size: 50rpx;
 }
+.hot_goods {
+  background: #eee;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.hot_goods .title {
+  color: #BA1500;
+  text-align: center;
+  letter-spacing: 20px;
+  padding: 10px 0;
+  margin: 7px 0;
+  background: white;
+}
+.hot_goods .goods_list {
+  padding: 0 15rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.hot_goods .goods_list .goods_item {
+  background: white;
+  width: 355rpx;
+  height: 530rpx;
+  margin: 10rpx 0;
+  padding: 15rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hot_goods .goods_list .goods_item image {
+  display: block;
+  margin: auto;
+  width: 355rpx;
+  height: 355rpx;
+}
+.hot_goods .goods_list .goods_item .price {
+  color: #BA1500;
+  padding: 0;
+  margin: 0;
+  font-size: 36rpx;
+}
+.hot_goods .goods_list .goods_item .name {
+  font-size: 28rpx;
+  line-height: 50rpx;
+  padding-bottom: 15rpx;
+}
 

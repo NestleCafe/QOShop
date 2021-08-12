@@ -164,15 +164,29 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
     return {
-      swipers: [] };
+      swipers: [],
+      goods: [] };
 
   },
   onLoad: function onLoad() {
     this.getSwipers();
+    this.getHotGoods();
   },
   methods: {
     //获取轮播图数据
@@ -180,8 +194,18 @@ var _default =
                   _this.$request({
                     url: '/home/swiperdata' }));case 2:res = _context.sent;
 
-                console.log(res);
-                _this.swipers = res.data.message;case 5:case "end":return _context.stop();}}}, _callee);}))();
+                _this.swipers = res.data.message;case 4:case "end":return _context.stop();}}}, _callee);}))();
+    },
+    //获取热门商品列表数据
+
+    getHotGoods: function getHotGoods() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var i, goods_id, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+                i = 0;case 1:if (!(i < 10)) {_context2.next = 10;break;}
+                goods_id = Math.floor(Math.random() * 9999 + 1);_context2.next = 5;return (
+                  _this2.$request({
+                    url: "/goods/detail?goods_id=".concat(goods_id) }));case 5:res = _context2.sent;
+
+                _this2.goods.push(res.data.message);case 7:i++;_context2.next = 1;break;case 10:case "end":return _context2.stop();}}}, _callee2);}))();
+
     } } };exports.default = _default;
 
 /***/ }),
