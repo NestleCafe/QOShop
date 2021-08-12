@@ -8,7 +8,19 @@
 		<view class="nav">
 			<view class="nav_item">
 				<view class="iconfont icon-ziyuan"></view>
-				<text></text>
+				<text>超市</text>
+			</view>
+			<view class="nav_item">
+				<view class="iconfont icon-guanyuwomen"></view>
+				<text>联系我们</text>
+			</view>
+			<view class="nav_item">
+				<view class="iconfont icon-tupian"></view>
+				<text>社区图片</text>
+			</view>
+			<view class="nav_item">
+				<view class="iconfont icon-shipin"></view>
+				<text>学习视频</text>
 			</view>
 		</view>
 	</view>
@@ -46,6 +58,23 @@ export default {
 	image {
 		width: 100%;
 		height: 100%;
+	}
+}
+.nav{
+	display: flex;
+	text-align: center;
+	.nav_item{
+		width: 25%;
+		view{
+			width: 120rpx;
+			height: 120rpx;
+			background: #BA1500;
+			border-radius: 60rpx;
+			margin: 10px auto;
+			line-height: 120rpx;
+			color: white;
+			font-size: 50rpx;
+		}
 	}
 }
 </style>
