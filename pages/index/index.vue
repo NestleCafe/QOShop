@@ -41,12 +41,12 @@
 					},
 					{
 						icon: "iconfont icon-guanyuwomen",
-						title: "联系我们",
+						title: "关于我们",
 						path: "/pages/contact/contact",
 					},
 					{
 						icon: "iconfont icon-tupian",
-						title: "社区图片",
+						title: "商品图片",
 						path: "/pages/pics/pics",
 					},
 					{

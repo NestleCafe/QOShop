@@ -48,6 +48,7 @@
 	.info{
 		padding: 10rpx 20rpx;
 		font-size: 30rpx;
+		margin-bottom: 10rpx;
 		view{
 			line-height: 80rpx;
 			border-bottom: 1px solid #eee;

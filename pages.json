@@ -24,16 +24,27 @@
             
         },
 		{
-            "path" : "pages/videos/videos"
+            "path" : "pages/videos/videos",
+			"style" :
+			{
+			    "navigationBarTitleText": "学习视频"
+			}
             
         },
 		{
-            "path" : "pages/contact/contact"
+            "path" : "pages/contact/contact",
+			"style" :
+			{
+			    "navigationBarTitleText": "关于我们"
+			}
             
         },
 		{
-            "path" : "pages/pics/pics"
-            
+            "path" : "pages/pics/pics",
+            "style" :
+            {
+                "navigationBarTitleText": "商品图片"
+            }
         }
     ],
 	"globalStyle": {
