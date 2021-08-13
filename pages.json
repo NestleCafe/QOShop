@@ -14,7 +14,28 @@
 		{
 			"path": "pages/news/news"
 		}
-	],
+	    ,{
+            "path" : "pages/goods/goods",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "商品列表",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		{
+            "path" : "pages/videos/videos"
+            
+        },
+		{
+            "path" : "pages/contact/contact"
+            
+        },
+		{
+            "path" : "pages/pics/pics"
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "QO商城",
