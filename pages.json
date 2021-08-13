@@ -13,13 +13,13 @@
 		}, 
 		{
 			"path": "pages/news/news"
-		}
-	    ,{
+		},
+		{
             "path" : "pages/goods/goods",
-            "style" :                                                                                    
-            {
+            "style" :                                           
+			{
                 "navigationBarTitleText": "商品列表",
-                "enablePullDownRefresh": false
+                "enablePullDownRefresh": true
             }
             
         },
