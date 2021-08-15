@@ -46,7 +46,7 @@
 					},
 					{
 						icon: "iconfont icon-tupian",
-						title: "商品图片",
+						title: "商品分类",
 						path: "/pages/pics/pics",
 					},
 					{

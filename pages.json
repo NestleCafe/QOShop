@@ -43,7 +43,7 @@
             "path" : "pages/pics/pics",
             "style" :
             {
-                "navigationBarTitleText": "商品图片"
+                "navigationBarTitleText": "商品分类"
             }
         }
     ],

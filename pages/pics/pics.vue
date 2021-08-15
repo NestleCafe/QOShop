@@ -1,17 +1,27 @@
 <template>
 	<view class="pics">
 		<scroll-view class="left" scroll-y="true">
-			<view :class="{active: selectedIndex === index}"
+			<view v-for="(item, index) in dataList" :key="item.id"
+				:class="{active: selectedIndex === index}"
 				@click="selectedIndex = index"
-				v-for="(item, index) in picsList" :key="item.id"
-			>{{item.cat_name}}</view>
+			>
+			{{item.cat_name}}
+			</view>
 		</scroll-view>
 		
-		<!-- 右侧信息 -->
+		<!-- 右侧信息(二级页面) -->
 		<scroll-view class="right" scroll-y="true" >
-			<view class="item" >
-				<image src=""></image>
-				<text>111</text>
+			<view class="item" v-for="(item, index) in rightContent" :key="rightContent.id">
+				<view class="item-child">
+					<view class="title">{{rightContent[index].cat_name}}</view>
+					<view class="content" 
+						v-for="childItem in rightContent[index].children"
+						:key="childItem.id"
+					>
+						<view class="contentText">{{childItem.cat_name}}</view>
+						<image :src="childItem.cat_icon"></image>
+					</view>
+				</view>
 			</view>
 		</scroll-view>
 	</view>
@@ -21,9 +31,10 @@
 	export default {
 		data() {
 			return {
-				picsList: [],
-				selectedIndex: 0,
-				rightContent: [],
+				dataList: [],	//调用接口获得的数据
+				selectedIndex: 0,	//一级页面索引
+				rightContent: [],	//二级页面内容
+				/* secondaryIndex: 0,		//二级页面内容索引 */
 			}
 		},
 		methods: {
@@ -31,16 +42,25 @@
 				const res = await this.$request({
 					url: '/categories',
 				})
-				this.picsList = res.data.message
-				console.log(res.data.message)
+				this.dataList = res.data.message
+				/* console.log(res.data.message) */
 				//获取右侧数据
-				console.log(res.data.message[this.selectedIndex].children)
-
+				//这个接口的二级页面太反人类了，看看接口文档
+				console.log(this.dataList[this.selectedIndex].children)
+				this.rightContent = this.dataList[this.selectedIndex].children
 			},
+			display(){
+				console.log(this.selectedIndex)
+			}
 		},
 		onLoad(){
 			this.getPicsList()
-		}
+		},
+ 		watch:{
+			selectedIndex: function(newValue){
+				this.rightContent = this.dataList[newValue].children
+			},
+		},
 	}
 </script>
 
@@ -65,7 +85,6 @@ page{
 			}
 			.active{
 				background: #eee;
-				
 			}
 		}
 		.right{
@@ -83,6 +102,24 @@ page{
 					font-size: 30rpx;
 					line-height: 60rpx;
 				}
+				.item-child{
+					.title{
+						margin-bottom: 10px;
+						text-align: center;
+						letter-spacing: 20px;
+						padding: 10px 0;
+						margin: 7px 0;
+						border-bottom: 3px solid #eee;
+						font-size: 36rpx;
+						color: $theme-color;
+					}
+					.content{
+						.contentText{
+							text-align:center;
+						}
+					}
+				}
+				
 			}
 		}
 	}
