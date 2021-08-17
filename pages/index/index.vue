@@ -48,12 +48,12 @@
 						icon: "iconfont icon-tupian",
 						title: "商品分类",
 						path: "/pages/pics/pics",
-					},
+					}/* ,
 					{
 						icon: "iconfont icon-shipin",
 						title: "学习视频",
 						path: "/pages/videos/videos",
-					},
+					}, */
 				],
 			};
 		},
@@ -107,9 +107,9 @@
 	.nav {
 		display: flex;
 		text-align: center;
-
+		justify-content: space-between;
 		.nav_item {
-			width: 25%;
+			padding: 0 15px;
 
 			view {
 				width: 120rpx;
