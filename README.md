@@ -12,3 +12,25 @@
 因接口问题，且实现了快速入门uni-app这个目标，跟视频的效果不太一致，暂时只实现了部分功能。
 
 如果会vue基本语法，uni-app十分容易上手，虽然是免费教学视频，但是受益良多。
+
+
+
+
+
+
+### 如何预览
+
+下载 [HbuilderX](https://www.dcloud.io/hbuilderx.html)，安装后在工具栏 运行![](static/resource/howto.png)
+如果运行在微信小程序，还需要安装 [微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)
+
+
+
+
+
+### 预览效果
+
+![](static/resource/1.png)
+
+![](static/resource/2.png)
+
+![](static/resource/3.png)
